@@ -1,4 +1,4 @@
-function AlternativeMessage() {
+export const  AlternativeMessage= ()=> {
     return (
         <div>
 
