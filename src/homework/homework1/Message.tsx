@@ -9,7 +9,7 @@ export interface messageData {
   outgoing?: boolean;
 }
 
-console.log(classnames(["class1","class2"],{['left'] :true,['right']:false}))
+
 
 export const Message = ({ name, message, time, avatar, outgoing}: messageData) => {
     classnames([css.messageContainer], {[css.messageContainer]: outgoing});
