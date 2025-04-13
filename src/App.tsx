@@ -1,10 +1,11 @@
-import Homework1 from "./homework/homework1/Homework1.tsx";
-import css from './homework/homework1/Message.module.css'
+
+import Homework2 from "./homework/homework2/Homework2.tsx";
+
 
 function App() {
-    return (<div className={css.chatContainer}>
-        <Homework1/>
-    </div>)
+    return (<>
+        <Homework2/>
+    </>)
 }
 
 export default App
