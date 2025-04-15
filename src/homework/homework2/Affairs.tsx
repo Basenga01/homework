@@ -1,8 +1,6 @@
 import Affair from './Affair'
 import { AffairType } from "./Homework2.tsx";
 
-
-
 type AffairsPropsType = { // need to fix any
     data: AffairType[]
     setFilter: any
