@@ -1,19 +1,37 @@
-import {AffairType} from "./Homework2.tsx";
+import { AffairType } from "./Homework2.tsx";
+import { useState } from "react";
 
 type AffairPropsType = {
-    // key не нужно типизировать
-    affair: AffairType // need to fix any
-    deleteAffairCallback: AffairType // need to fix any
-}
+  affair: AffairType;
+  deleteAffairCallback: (_id: number) => void;
+};
 
 function Affair(props: AffairPropsType) {
-    const deleteCallback = () => {}// need to fix
-    return (
+  const [changed, setChanged] = useState<boolean>(false);
+
+  const deleteCallback = () => {
+    props.deleteAffairCallback(props.affair._id);
+  };
+  return (
+    <div>
+      {changed ? (
         <div>
-            {props.affair.name}
-            <button onClick={deleteCallback}>X</button>
+          <input />
+          <button></button>
         </div>
-    )
+      ) : (
+        props.affair.name
+      )}
+      <button
+        onClick={() => {
+          setChanged((prevState) => !prevState);
+        }}
+      >
+        Change
+      </button>
+      <button onClick={deleteCallback}>Del</button>
+    </div>
+  );
 }
 
-export default Affair
+export default Affair;
