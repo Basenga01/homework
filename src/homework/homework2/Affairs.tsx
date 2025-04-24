@@ -1,11 +1,11 @@
-import Affair from "./Affair";
-import { AffairType, FilterType } from "./Homework2.tsx";
+import Affair from './Affair'
+import { AffairType, FilterType } from './Homework2.tsx'
 
 interface AffairsPropsType {
-  // need to fix any
-  data: AffairType[];
-  setFilter: (filter: FilterType) => void;
-  deleteAffairCallback: (_id: number) => void;
+  data: AffairType[]
+  setFilter: (filter: FilterType) => void
+  deleteAffairCallback: (_id: number) => void
+  changeAffairTitleCallback: (_id: number, title: string) => void
 }
 
 function Affairs(props: AffairsPropsType) {
@@ -14,21 +14,22 @@ function Affairs(props: AffairsPropsType) {
       key={a._id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
       affair={a}
       deleteAffairCallback={props.deleteAffairCallback}
+      changeAffairTitleCallback={props.changeAffairTitleCallback}
     />
-  ));
+  ))
 
   const setAll = () => {
-    props.setFilter("all");
-  }; // need to fix
+    props.setFilter('all')
+  } // need to fix
   const setHigh = () => {
-    props.setFilter("high");
-  };
+    props.setFilter('high')
+  }
   const setMiddle = () => {
-    props.setFilter("middle");
-  };
+    props.setFilter('middle')
+  }
   const setLow = () => {
-    props.setFilter("low");
-  };
+    props.setFilter('low')
+  }
   return (
     <div>
       {mappedAffairs}
@@ -38,7 +39,7 @@ function Affairs(props: AffairsPropsType) {
       <button onClick={setMiddle}>Middle</button>
       <button onClick={setLow}>Low</button>
     </div>
-  );
+  )
 }
 
-export default Affairs;
+export default Affairs
